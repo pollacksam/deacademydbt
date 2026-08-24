@@ -17,7 +17,11 @@ models:
         data_tests:
           - salary_check
   - name: customer
-    description: "DBt Model for the customer table"        
+    description: "DBT Model for the customer table"
+  - name: customer_vw
+    description: "DBT model for the customer view"
+  - name: sales
+    description: "DBT model for the sales table"        
 
 sources:
   - name: employee
@@ -30,3 +34,8 @@ sources:
     schema: PUBLIC
     tables:
       - name: CUSTOMER_SRC
+  - name: sales
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: SALES_SRC
