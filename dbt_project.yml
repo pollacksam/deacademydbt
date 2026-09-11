@@ -1,4 +1,3 @@
-
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
@@ -41,12 +40,12 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  sam_dbt_workshop:
+  sam_dbt_project:
       example:
-          schema: example 
+          +schema: example 
       silver:
-          schema: silver
-          materialized: table
+          +schema: silver
+          +materialized: table
       gold:
-          schema: gold
-          materialized: view
+          +schema: gold
+          +materialized: view
