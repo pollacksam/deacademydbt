@@ -41,8 +41,6 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   sam_dbt_project:
-      example:
-          +schema: example 
       silver:
           +schema: silver
           +materialized: table
