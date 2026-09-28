@@ -1,7 +1,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'sam_dbt_project'
+name: 'sam_walmart_project'
 version: '1.0.0'
 config-version: 2
 
@@ -10,10 +10,10 @@ profile: 'default'
 
 vars:
    wrk_schema: BRONZE
-   file_format_json: SCD2_DB.BRONZE.MY_CSV_FORMAT
+   file_format_json: WALMART_DB.BRONZE.WALMART_CSV_FORMAT
    purge_status: FALSE
-   stage_name: SCD2_DB.BRONZE.s3_test_stage
-   rawhist_db: SCD2_DB
+   stage_name: WALMART_DB.BRONZE.S3_WALMART_STAGE
+   rawhist_db: WALMART_DB
 
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
@@ -42,7 +42,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  sam_dbt_project:
+  sam_walmart_project:
       silver:
           +schema: silver
           +materialized: table
