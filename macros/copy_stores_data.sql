@@ -10,7 +10,7 @@ SELECT
     $2 AS Type,
     $3 AS Size,
     CURRENT_TIMESTAMP() AS INSERT_DTS,
-    CURRENT_TIMESTAMP() AS UPDATE_DTS,
+    CURRENT_TIMESTAMP() AS UPDATE_DTS
 FROM @{{ var('stores_stage_name') }}
 )
 FILE_FORMAT = {{var ('file_format_json') }}

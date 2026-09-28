@@ -10,9 +10,9 @@ SELECT
     $2 AS Dept,
     $3 AS Date,
     $4 AS Weekly_Sales,
-    $5 AS IsHoliday
+    $5 AS IsHoliday,
     CURRENT_TIMESTAMP() AS INSERT_DTS,
-    CURRENT_TIMESTAMP() AS UPDATE_DTS,
+    CURRENT_TIMESTAMP() AS UPDATE_DTS
 FROM @{{ var('departments_stage_name') }}
 )
 FILE_FORMAT = {{var ('file_format_json') }}

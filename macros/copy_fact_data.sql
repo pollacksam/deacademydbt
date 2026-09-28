@@ -16,8 +16,8 @@ SELECT
     $8 AS MarkDown4,
     $9 AS MarkDown5,
     $10 AS CPI,
-    $11 AS Unemployment
-    $12 AS IsHoliday
+    $11 AS Unemployment,
+    $12 AS IsHoliday,
     CURRENT_TIMESTAMP() AS INSERT_DTS,
     CURRENT_TIMESTAMP() AS UPDATE_DTS,
     metadata$filename AS SOURCE_FILE_NAME,
