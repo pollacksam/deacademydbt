@@ -12,7 +12,9 @@ vars:
    wrk_schema: BRONZE
    file_format_json: WALMART_DB.BRONZE.WALMART_CSV_FORMAT
    purge_status: FALSE
-   stage_name: WALMART_DB.BRONZE.S3_WALMART_STAGE
+   departments_stage_name: WALMART_DB.BRONZE.DEPARTMENTS_STAGE
+   fact_stage_name: WALMART_DB.BRONZE.FACT_STAGE
+   stores_stage_name: WALMART_DB.BRONZE.STORES_STAGE
    rawhist_db: WALMART_DB
 
 # These configurations specify where dbt should look for different types of files.
