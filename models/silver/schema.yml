@@ -1,0 +1,12 @@
+version: 2
+sources:
+    - name: source
+      database: WALMART_DB
+      schema: BRONZE
+      tables:
+        - name: DEPARTMENTS_COPY
+          description: "Raw table for the departments.csv file."
+        - name: FACT_COPY
+          description: "Raw table for the facts.csv file."
+        - name: STORES_COPY
+          description: "Raw table for the stores.csv file."
