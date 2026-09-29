@@ -8,8 +8,8 @@
 WITH transform AS(
 SELECT 
     STORE AS STORE
-    ,'TYPE' AS 'TYPE'
-    ,'SIZE' AS 'SIZE'
+    ,TYPE AS TYPE
+    ,SIZE AS SIZE
     ,INSERT_DTS AS INSERT_DTS
     ,UPDATE_DTS AS UPDATE_DTS
 FROM {{source('source','STORES_COPY')}}
