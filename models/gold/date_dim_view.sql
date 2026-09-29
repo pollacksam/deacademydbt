@@ -15,3 +15,5 @@ FROM {{ref('fact_snapshot')}}
 
 SELECT *
 FROM view v
+GROUP BY
+    STORE_DATE
