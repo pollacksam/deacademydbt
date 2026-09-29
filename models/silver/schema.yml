@@ -10,3 +10,13 @@ sources:
           description: "Raw table for the facts.csv file."
         - name: STORES_COPY
           description: "Raw table for the stores.csv file."
+    - name: transform
+      database: WALMART_DB
+      schema: SILVER
+      tables:
+        - name: DEPARTMENTS_TRANSFORM
+          description: "Transformed table for the departments.csv file."
+        - name: FACT_TRANSFORM
+          description: "Transformed table for the facts.csv file."
+        - name: STORES_TRANSFORM
+          description: "Transformed table for the stores.csv file."
