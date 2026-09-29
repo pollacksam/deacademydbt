@@ -20,8 +20,6 @@ SELECT
     $12 AS IsHoliday,
     CURRENT_TIMESTAMP() AS INSERT_DTS,
     CURRENT_TIMESTAMP() AS UPDATE_DTS,
-    metadata$filename AS SOURCE_FILE_NAME,
-    metadata$file_row_number AS SOURCE_FILE_ROW_NUMBER
 FROM @{{ var('fact_stage_name') }}
 )
 FILE_FORMAT = {{var ('file_format_json') }}
