@@ -11,9 +11,9 @@ SELECT
     ,INSERT_DTS
     ,UPDATE_DTS
 FROM {{ref('fact_snapshot')}}
-GROUP BY
-    DATE
 )
 
 SELECT *
 FROM view v
+GROUP BY
+    STORE_DATE, DATE_ID, ISHOLIDAY, INSERT_DTS, UPDATE_DTS
