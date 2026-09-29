@@ -19,7 +19,7 @@ SELECT
     $11 AS Unemployment,
     $12 AS IsHoliday,
     CURRENT_TIMESTAMP() AS INSERT_DTS,
-    CURRENT_TIMESTAMP() AS UPDATE_DTS,
+    CURRENT_TIMESTAMP() AS UPDATE_DTS
 FROM @{{ var('fact_stage_name') }}
 )
 FILE_FORMAT = {{var ('file_format_json') }}
