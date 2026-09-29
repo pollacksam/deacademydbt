@@ -6,6 +6,7 @@
 WITH view AS(
 SELECT
     STORE AS STORE_ID
+    ,DATE
     ,FUEL_PRICE
     ,TEMPERATURE AS STORE_TEMPERATURE
     ,UNEMPLOYMENT
@@ -42,3 +43,4 @@ SELECT
 FROM view v
 JOIN {{ref('transform_departments_load')}} d
     ON v.STORE_ID = d.STORE
+    AND v.DATE = d.DATE
