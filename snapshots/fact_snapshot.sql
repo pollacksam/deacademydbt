@@ -3,10 +3,10 @@
     config(
       target_database='WALMART_DB',
       target_schema='snapshots',
-      unique_key=['STORE'],
+      unique_key='STORE_ID',
       strategy='check',
-      check_cols=['STORE', 'DATE', 'TEMPERATURE', 'FUEL_PRICE', 'MARKDOWN1', 'MARKDOWN2', 'MARKDOWN3', 'MARKDOWN4', 'MARKDOWN5'
-                  'CPI', 'UNEMPLOYMENT', 'ISHOLIDAY'],
+      check_cols=['STORE_ID', 'DEPT_ID', 'STORE_DATE', 'STORE_WEEKLY_SALES', 'FUEL_PRICE', 'STORE_TEMPERATURE', 'UNEMPLOYMENT',  'CPI',
+      'MARKDOWN1', 'MARKDOWN2', 'MARKDOWN3', 'MARKDOWN4', 'MARKDOWN5'],
     )
 }}
 select * from {{ source('transform', 'FACT_TRANSFORM') }}
