@@ -13,12 +13,14 @@ FROM {{ref('transform_departments_load')}}
 )
 
 SELECT
-    v.STORE_ID
-    ,v.DEPT_ID
-    ,s.TYPE AS STORE_TYPE
-    ,s.SIZE AS STORE_SIZE
-    ,v.INSERT_DTS
-    ,v.UPDATE_DTS
+    v.STORE_ID::INT AS STORE_ID
+    ,v.DEPT_ID::INT AS DEPT_ID
+    ,s.TYPE::VARCHAR(255) AS STORE_TYPE
+    ,s.SIZE::INT AS STORE_SIZE
+    ,v.INSERT_DTS::TIMESTAMP_NTZ(6) AS INSERT_DTS
+    ,v.UPDATE_DTS::TIMESTAMP_NTZ(6) AS UPDATE_DTS
 FROM view v
 JOIN {{ref('transform_stores_load')}} s
     ON v.STORE_ID = s.STORE
+ORDER BY
+    STORE_ID, DEPT_ID
