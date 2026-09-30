@@ -20,3 +20,13 @@ sources:
           description: "Transformed table for the facts.csv file."
         - name: STORES_TRANSFORM
           description: "Transformed table for the stores.csv file."
+    - name: load
+      database: WALMART_DB
+      schema: GOLD
+      tables:
+        - name: DATE_DIM_VIEW
+          description: "Gold layer Walmart Date dim table."
+        - name: FACT_VIEW
+          description: "Gold layer Walmart fact table."
+        - name: STORE_DIM_VIEW
+          description: "Gold layer Walmart Store dim table."
