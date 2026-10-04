@@ -9,5 +9,5 @@
       'MARKDOWN1', 'MARKDOWN2', 'MARKDOWN3', 'MARKDOWN4', 'MARKDOWN5'],
     )
 }}
-select * from {{ source('transform', 'FACT_TRANSFORM') }}
+select * from {{ ref('transform_fact_load') }}
 {% endsnapshot %}

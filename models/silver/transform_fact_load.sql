@@ -44,4 +44,4 @@ JOIN {{source('source','DEPARTMENTS_COPY')}} d
     ON t.STORE_ID = d.STORE
     AND t.STORE_DATE = d.DATE
 ORDER BY
-    STORE_ID, DEPT_ID, STORE_DATE
+    1, 2, 3
