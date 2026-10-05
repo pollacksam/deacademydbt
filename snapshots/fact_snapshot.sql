@@ -3,9 +3,9 @@
     config(
       target_database='WALMART_DB',
       target_schema='snapshots',
-      unique_key='STORE_ID',
+      unique_key=['STORE_ID', 'DEPT_ID', 'STORE_DATE'],
       strategy='check',
-      check_cols=['STORE_ID', 'DEPT_ID', 'STORE_DATE', 'STORE_WEEKLY_SALES', 'FUEL_PRICE', 'STORE_TEMPERATURE', 'UNEMPLOYMENT',  'CPI',
+      check_cols=['STORE_WEEKLY_SALES', 'FUEL_PRICE', 'STORE_TEMPERATURE', 'UNEMPLOYMENT',  'CPI',
       'MARKDOWN1', 'MARKDOWN2', 'MARKDOWN3', 'MARKDOWN4', 'MARKDOWN5'],
     )
 }}

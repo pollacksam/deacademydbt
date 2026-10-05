@@ -1,4 +1,6 @@
-{{ config({ "materialized":'table',
+{{ config({ "materialized":'incremental',
+"incremental_strategy":'merge',
+ "unique_key":['STORE_ID','DEPT_ID','STORE_DATE'],
  "transient":true,
  "alias":'DEPARTMENTS_TRANSFORM',
  "pre_hook": macros_copy_departments_csv('DEPARTMENTS_COPY'),
@@ -15,6 +17,10 @@ SELECT
     ,INSERT_DTS::TIMESTAMP_NTZ(6) AS INSERT_DTS
     ,UPDATE_DTS::TIMESTAMP_NTZ(6) AS UPDATE_DTS
 FROM {{source('source','DEPARTMENTS_COPY')}}
+
+{% if is_incremental() %}
+    where UPDATE_DTS > (select max(UPDATE_DTS) from {{this}})
+    {% endif %}
 )
 
 SELECT *

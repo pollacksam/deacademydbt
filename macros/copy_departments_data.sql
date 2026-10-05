@@ -17,7 +17,6 @@ FROM @{{ var('departments_stage_name') }}
 )
 FILE_FORMAT = {{var ('file_format_json') }}
 PURGE={{ var('purge_status') }}
-FORCE = TRUE
 ;
 
 {% endmacro %}
