@@ -24,9 +24,9 @@ sources:
       database: WALMART_DB
       schema: GOLD
       tables:
-        - name: DATE_DIM_VIEW
+        - name: DATE_DIM
           description: "Gold layer Walmart Date dim table."
-        - name: FACT_VIEW
+        - name: FACT
           description: "Gold layer Walmart fact table."
-        - name: STORE_DIM_VIEW
+        - name: STORE_DIM
           description: "Gold layer Walmart Store dim table."
